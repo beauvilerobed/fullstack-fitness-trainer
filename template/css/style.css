@@ -1,0 +1,830 @@
+body {
+     background-image: url("images/20200514_154054.jpg");
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     background-color: whitesmoke;
+}
+/* Navigation Bar */
+ img {
+     border: 4px solid #337ab7;
+     border-radius: 5px;
+     padding: 1px;
+     margin: 4px;
+}
+ img:hover {
+     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+ h2 {
+     font-family: 'Righteous', sans-serif;
+     letter-spacing: 1px;
+}
+ h5 {
+     font-family: 'Righteous', sans-serif;
+     letter-spacing: 1px;
+     font-size: 120%;
+}
+ .navbar{
+     transition: all ease 0.4s;
+     padding-right: 20px;
+     position: fixed;
+}
+ .navbar-brand{
+     font-size: 100%;
+     padding: 10px;
+}
+ .navbar .navbar-nav li a{
+     font-size: 200%;
+     font-family: 'Righteous', sans-serif;
+     color: black;
+}
+/* label for muscle groups and exercies and title */
+ h3{
+     text-align: center;
+}
+ h4{
+     font-size: 200%;
+     text-align: center;
+     font-family: 'Arial',sans-serif;
+     background-color: white;
+     color: black;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     width: 100%;
+     border-radius: 5px;
+     margin-bottom: 20px;
+     padding: 15px;
+     border: 5px solid #eee;
+}
+ h1{
+     font-size: 500%;
+     text-align: center;
+}
+/* button for start here and muscle groups */
+ button #changeQuestion{
+     margin-bottom: 10px;
+     font-size: 2em;
+}
+ #showCardio, #showWeights, #showResistanceband, #showBodyweights{
+     margin-bottom: 10px;
+}
+ .center {
+     margin: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+}
+ #edit_title {
+     font-family: 'Righteous', sans-serif;
+     background-color: white;
+     color: black;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     border-radius: 5px;
+     margin-bottom: 20px;
+     padding: 15px;
+     border: 5px solid #eee;
+}
+ #scroll_up:hover {
+     background-color: #337ab7;
+     color: white;
+}
+/* hide the tutorial video */
+ .container_tutorial{
+     display: none;
+}
+/* List of exercise for the 4 muclse groups */
+ #tableforCardioWorkouts, #tableforWeightsWorkouts, #tableforResistancedandWorkouts, #tableforBodyWeightsWorkouts {
+     font-family: sans-serif;
+     background-color: white;
+     color: #337ab7;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     border-radius: 5px;
+     margin-bottom: 20px;
+     padding: 15px;
+     border: 5px solid #eee;
+}
+/* table that includes BMR, TDEE etc. */
+ #recommended_intake, #recommended_foods {
+     font-family: sans-serif;
+     background-color: white;
+     color: black;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     border-radius: 5px;
+     margin-bottom: 20px;
+     padding: 15px;
+     border: 5px solid #eee;
+}
+ table {
+     font-family: arial, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     margin-bottom: 10px;
+}
+ tbody{
+     border-radius: 5px;
+}
+ td, th {
+     border: 1px solid #dddddd;
+     text-align: center;
+     padding: 5px;
+     font-size: 110%;
+}
+ tr:nth-child(odd) {
+     background-color: #eee;
+}
+ tr:nth-child(even) {
+     background-color: #dddddd;
+}
+/* edit bootstrap buttons */
+ button {
+     font-size: 150%;
+}
+ .btn {
+     margin-top: 10px;
+}
+ .btn-lg {
+     font-size: 200%;
+}
+/* https://stackoverflow.com/questions/15300234/how-can-i-horizontally-center-a-button-element-in-a-div-element */
+ .btn-block {
+     margin:10px auto;
+     display:block;
+}
+ .btn , .fix_label{
+     font-size: 120%;
+}
+ .fix_label2{
+     font-size: 100%;
+}
+/* style input form */
+ #BMIQuestions, #exercisePreferenceQuestions, #weeklyWorkoutQuestions {
+     position: relative;
+     background: #eee;
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     font-size: 1.75em;
+}
+ #changeQuestion {
+     font-size: 120%;
+}
+/* only shows up for food recommendations with id="foodlist" */
+ pre {
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     text-align: center;
+}
+/* style the failure */
+ .show_failure {
+     background-color: #eee;
+     border-radius: 5px;
+     padding: 10px;
+}
+/* style all the inputs from start here to number of food recommendations */
+ .ip4 {
+     border-radius: 5px;
+     border: 1.5px solid #337ab7;
+     padding: .10em;
+     margin: .10em;
+     text-align: center;
+     -webkit-appearance:none;
+}
+/* https://codepen.io/baublet/pen/PzjmpL */
+ .muscle-groups {
+     position: relative;
+     background: #eee;
+     width: 100%;
+     height: auto;
+     padding: 1rem 1rem;
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     overflow: hidden;
+}
+ .muscle-groups h1 {
+     font-family: "Arial Black", sans-serif;
+     margin: auto;
+     padding: 1rem 1rem 0.75rem;
+     background: #337ab7;
+     color: #eee;
+     text-align: center;
+     font-size: 150%;
+     border-radius: 5px;
+}
+ .muscle-groups h2 {
+     margin: 1rem 0 0.5rem;
+     font-size: 150%;
+     color: black;
+     letter-spacing: -0.03em;
+     text-transform: uppercase;
+}
+ .muscle-groups label + h2 {
+     margin-top: 1rem;
+}
+ .muscle-groups label {
+     width: 50px;
+     display: block;
+     margin-bottom: 0.5rem;
+     cursor: pointer;
+     font-size: 120%;
+     opacity: 0.5;
+     position: relative;
+     z-index: 200;
+     border-left: 5px solid transparent;
+     padding-left: 6px;
+     margin-left: -11px;
+     color: #337ab7;
+}
+ .muscle-groups label:hover, .muscle-groups label.hover {
+     opacity: 1;
+     border-color: rgba(51, 51, 51, .75);
+}
+ .muscle-groups input:checked + label {
+     opacity: 1;
+     font-weight: bold;
+     color: #337ab7;
+}
+ .muscle-groups svg {
+     position: absolute;
+     right: -1.5rem;
+     bottom: 3rem;
+     height: 500px;
+     z-index: 100;
+}
+ .muscle-groups svg g[id] path {
+     opacity: 0.2;
+     transition: opacity 0.25s ease-in-out;
+}
+ .muscle-groups svg g g[id]:hover path {
+     cursor: pointer;
+     opacity: 0.5;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .muscles-helper {
+     display: none;
+}
+/* oblique */
+ .muscle-groups label[for="oblique"]:hover ~ svg g.oblique path {
+     opacity: 0.75;
+}
+ .muscle-groups .oblique:checked ~ svg g.oblique path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .oblique[target=oblique] ~ svg g.oblique path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* abs */
+ .muscle-groups label[for="abs"]:hover ~ svg g.Abs path {
+     opacity: 0.75;
+}
+ .muscle-groups .abs:checked ~ svg g.Abs path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .abs[target=abs] ~ svg g.Abs path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* quads */
+ .muscle-groups label[for="quads"]:hover ~ svg g.Quads path {
+     opacity: 0.75;
+}
+ .muscle-groups .quads:checked ~ svg g.Quads path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .quads[target=quads] ~ svg g.Quads path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* bicep */
+ .muscle-groups label[for="bicep"]:hover ~ svg g.bicep path {
+     opacity: 0.75;
+}
+ .muscle-groups .bicep:checked ~ svg g.bicep path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .bicep[target=bicep] ~ svg g.bicep path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* adductor */
+ .muscle-groups label[for="adductor"]:hover ~ svg g.adductor path {
+     opacity: 0.75;
+}
+ .muscle-groups .adductor:checked ~ svg g.adductor path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .adductor[target=adductor] ~ svg g.adductor path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* pectoral */
+ .muscle-groups label[for="pectoral"]:hover ~ svg g.pectoral path {
+     opacity: 0.75;
+}
+ .muscle-groups .pectoral:checked ~ svg g.pectoral path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .pectoral[target=pectoral] ~ svg g.pectoral path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* shoulders */
+ .muscle-groups label[for="shoulders"]:hover ~ svg g.shoulders path {
+     opacity: 0.75;
+}
+ .muscle-groups .shoulders:checked ~ svg g.shoulders path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .shoulders[target=shoulders] ~ svg g.shoulders path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* hamstrings */
+ .muscle-groups label[for="hamstrings"]:hover ~ svg g.Hamstrings path {
+     opacity: 0.75;
+}
+ .muscle-groups .hamstrings:checked ~ svg g.Hamstrings path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .hamstrings[target=hamstrings] ~ svg g.Hamstrings path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* Quads */
+ .muscle-groups label[for="quads"]:hover ~ svg g.Quads path {
+     opacity: 0.75;
+}
+ .muscle-groups .quads:checked ~ svg g.Quads path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .quads[target=quads] ~ svg g.Quads path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* forearms */
+ .muscle-groups label[for="forearms"]:hover ~ svg g.forearms path {
+     opacity: 0.75;
+}
+ .muscle-groups .forearms:checked ~ svg g.forearms path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .forearms[target=forearms] ~ svg g.forearms path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* calves */
+ .muscle-groups label[for="calves"]:hover ~ svg g.calves path {
+     opacity: 0.75;
+}
+ .muscle-groups .calves:checked ~ svg g.calves path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .calves[target=calves] ~ svg g.calves path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* tricep */
+ .muscle-groups label[for="tricep"]:hover ~ svg g.tricep path {
+     opacity: 0.75;
+}
+ .muscle-groups .tricep:checked ~ svg g.tricep path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .tricep[target=tricep] ~ svg g.tricep path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* glutes */
+ .muscle-groups label[for="glutes"]:hover ~ svg g.Glutes path {
+     opacity: 0.75;
+}
+ .muscle-groups .glutes:checked ~ svg g.Glutes path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .glutes[target=glutes] ~ svg g.Glutes path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* lats */
+ .muscle-groups label[for="lats"]:hover ~ svg g.Lats path {
+     opacity: 0.75;
+}
+ .muscle-groups .lats:checked ~ svg g.Lats path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .lats[target=lats] ~ svg g.Lats path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* trapezius */
+ .muscle-groups label[for="trapezius"]:hover ~ svg g.Trapezius path {
+     opacity: 0.75;
+}
+ .muscle-groups .trapezius:checked ~ svg g.Trapezius path {
+     opacity: 0.8;
+     fill: #337ab7 !important;
+}
+ .muscle-groups .trapezius[target=trapezius] ~ svg g.Trapezius path {
+     opacity: 0.8;
+     fill: #ADD8E6 !important;
+}
+/* end of https://codepen.io/baublet/pen/PzjmpL */
+/* hide the table for the 4 muscle groups*/
+ #tableforCardioWorkouts, #tableforWeightsWorkouts, #tableforResistancedandWorkouts, #tableforBodyWeightsWorkouts {
+     display: none;
+     width: 100%;
+}
+/* reposition the svgs and labels for muscle group*/
+ main {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     padding: 1em;
+     display: none;
+}
+ main .info {
+     font-size: 150%;
+     display: block;
+     width: 250px;
+     padding-top: 200px;
+     color: #eee;
+     padding-left: 2rem;
+     opacity: 0.5;
+}
+ main .info:hover {
+     opacity: 1;
+}
+ main .info a {
+     color: #eee;
+}
+/* style svg muscle group guide */
+ #guide {
+     display: block;
+     justify-content: center;
+     align-items: center;
+     padding: 0em ;
+     width: 100%;
+     position: relative;
+}
+/* hide the food list and social media list as well */
+ li {
+     display: none;
+}
+/* for javascripts to select food and Fisher–Yates shuffles */
+ .selected {
+     display: flex;
+}
+ .falseinput:focus {
+     border-color: #FF0000;
+     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+/* containts the entire body */
+ @media only screen and (min-width:1000px) {
+    /* For tablets: */
+     .container {
+         width: 70%;
+         margin-bottom: 30px;
+         margin-top: 60px;
+    }
+     .navbar .navbar-nav li a{
+         font-size: 150%;
+         font-family: 'Righteous', sans-serif;
+         color: black;
+    }
+}
+ @media only screen and (max-width:1000px) {
+    /* For tablets: */
+     .container {
+         width: 70%;
+         margin-bottom: 30px;
+         margin-top: 60px;
+    }
+     .navbar .navbar-nav li a{
+         font-size: 200%;
+         font-family: 'Righteous', sans-serif;
+         color: black;
+    }
+}
+ @media only screen and (max-width:850px) {
+    /* For mobile phones: */
+     .container {
+         width: 100%;
+         margin-bottom: 50px;
+         margin-top: 60px;
+    }
+     .navbar .navbar-nav li a{
+         font-size: 250%;
+         font-family: 'Righteous', sans-serif;
+         color: black;
+    }
+     .navbar{
+         transition: all ease 0.4s;
+         padding-right: 20px;
+         padding-top: 15px;
+         position: fixed;
+    }
+}
+/* how to videos */
+ .hideAndShow_BodyWeightVideo:hover, .hideAndShow_ResistancebandVideo:hover, .hideAndShow_WeightsVideo:hover, .hideAndShow_CardioVideo:hover {
+     color: white;
+     background: #337ab7;
+}
+/* edit the save buttons */
+ .fix_label{
+     margin: 10px;
+     font-size: 2em;
+}
+ .fix_label:hover {
+     color: #FF0000;
+     align-items: center;
+}
+/* to center the make a plan button */
+ .container1 {
+     height: 20px;
+     width: 100%;
+     position: relative;
+     margin-top: 20px
+}
+/* play and pause button */
+ #seek, #pauseButton, #playButton {
+     font-size: 120%;
+     align-items: center;
+}
+ .seek, .pauseButton, .playButton {
+     font-size: 120%;
+     align-items: center;
+}
+/* for view.php and for nutrition info*/
+ .show_info {
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     text-align: center;
+     background-color: #eee;
+     margin-bottom: 10px;
+     border: 3px solid #337ab7;
+     font-size: 2em;
+}
+ .show_info.color1{
+     border: 5px solid #46b6f1;
+     margin-top: 10px;
+}
+ .show_info.color2{
+     border: 5px solid #ec428c;
+}
+ .show_info.color3{
+     border: 5px solid #f7b944;
+}
+ .show_info.color4{
+     border: 5px solid #584186;
+}
+/* for view.php */
+ .show_info2 {
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     text-align: center;
+     background-color: #eee;
+     margin-bottom: 10px;
+     border: 3px solid #337ab7;
+     font-size: 1.85em;
+     padding: 10px;
+}
+ .show_info3 {
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     text-align: center;
+     background-color: #eee;
+     margin-bottom: 10px;
+     border: 3px solid #337ab7;
+     font-size: 1em;
+     padding: 5px;
+}
+ .card-title {
+     font-size: 2em;
+}
+ .card-body {
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     text-align: center;
+     background-color: #eee;
+     padding: 10px;
+     border: 3px solid #337ab7;
+     max-height: 190px;
+}
+ .card_info {
+     font-size: 1.5em;
+}
+ .edit_h2 {
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     text-align: center;
+     background-color: #eee;
+     padding: 15px;
+     font-family: "Arial Black", sans-serif;
+     border: 3px solid #337ab7;
+     font-size: 200%;
+}
+ .col-sm-6, .col-xs-6 {
+     margin-top: 10px;
+}
+ .show_info, .pre_view {
+     border-radius: 5px;
+     padding: 20px;
+}
+/* footer */
+ .site-footer {
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     margin-top: 100px;
+     margin-bottom: 10px;
+     background-color:#337ab7;
+     padding:45px;
+     font-size:130%;
+     line-height:24px;
+     color:whitesmoke;
+}
+ .site-footer hr {
+     border-top-color:#bbb;
+     opacity:0.5
+}
+ .site-footer hr.small {
+     margin:20px 0
+}
+ .site-footer h6 {
+     color:#fff;
+     font-size:140%;
+     text-transform:uppercase;
+     margin-top:5px;
+     letter-spacing:2px
+}
+ .site-footer a {
+     color:#fff;
+}
+ .site-footer a:hover {
+     color:#fff;
+     text-decoration:none;
+}
+ .footer-links {
+     padding-left:0;
+     list-style:none
+}
+ .footer-links li {
+     display:block
+}
+ .footer-links a {
+     color:#ddd
+}
+ .footer-links a:active,.footer-links a:focus,.footer-links a:hover {
+     color:whitesmoke;
+     text-decoration:none;
+}
+ .footer-links.inline li {
+     display:inline-block
+}
+ .site-footer .social-icons {
+     text-align:right
+}
+ .site-footer .social-icons a {
+     width:40px;
+     height:40px;
+     margin-left:6px;
+     margin-right:0;
+     border-radius:100%;
+     background-color:#007bb6
+}
+ .copyright-text {
+     margin:0;
+     text-align:center;
+}
+ @media (max-width:991px) {
+     .site-footer [class^=col-] {
+         margin-bottom:30px;
+    }
+     .site-footer .copyright-text,.site-footer .social-icons {
+         text-align:center
+    }
+}
+ @media (max-width:767px) {
+     .site-footer {
+         padding-bottom:0
+    }
+     .site-footer .copyright-text,.site-footer .social-icons {
+         text-align:center
+    }
+}
+ .social-icons {
+     list-style:none
+}
+ .social-icons li {
+     display:inline-block;
+     margin-bottom:4px
+}
+ .social-icons li.title {
+     text-transform:uppercase;
+     color:#007bb6;
+     font-weight:1000;
+     font-size:20px
+}
+ .social-icons a{
+     background-color:#007bb6;
+     color:whitesmoke;
+     font-size:30px;
+     display:inline-block;
+     width:100%;
+     height:100%;
+     text-align:center;
+     border-radius:50%;
+     -webkit-transition:all .2s linear;
+     -o-transition:all .2s linear;
+     transition:all .2s linear
+}
+ .social-icons a:active,.social-icons a:focus,.social-icons a:hover {
+     color:#fff;
+     background-color:#007bb6
+}
+ .social-icons.size-sm a {
+     height:34px;
+     width:34px;
+     font-size:14px
+}
+ .social-icons a.instagram:hover {
+     background-color:#007bb6;
+     color: white;
+}
+ .social-icons a.google:hover {
+     background-color:#007bb6;
+     color: white;
+}
+ .social-icons a.youtube:hover {
+     background-color:#007bb6;
+     color: white;
+}
+ .social-icons a.linkedin:hover {
+     background-color:#007bb6;
+     color: white;
+}
+ @media (max-width:767px) {
+     .social-icons li.title {
+         display:block;
+         margin-right:0;
+         font-weight:600
+    }
+}
+/* For video player */
+ .edit_video {
+     padding: 20px;
+     border: 5px;
+}
+/* How to info */
+ .Facts_for_nf {
+     margin-top:100px;
+}
+ #Facts {
+     display: none;
+}
+ .Facts_for_nf:hover {
+     background-color: #337ab7;
+     color: white;
+}
+/* show the how to vidoes */
+ #showResistancebandVideo, #showBodyWeightVideo, #showCardioVideo, #showWeightsVideo, .container_tutorial {
+     display: none;
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+     text-align: center;
+     background-color: #eee;
+     border: 3px solid #337ab7;
+     padding-bottom: 10px;
+     padding: 5px;
+}
+ .btn-md{
+     margin: 5px;
+}
+ h2.edit_h2.how_to_exer {
+     margin-top: 100px;
+}
+/* NutritionFacts */
+ img.edit_facts {
+     border: 3px solid #ddd;
+     border-radius: 5px;
+     padding: 1px;
+     margin: 3px;
+}
+ 

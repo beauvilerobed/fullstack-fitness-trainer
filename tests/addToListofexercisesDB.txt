@@ -1,0 +1,38 @@
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('forarms', 2);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('forarms', 2);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('forarms', 1);

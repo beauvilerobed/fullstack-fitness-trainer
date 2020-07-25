@@ -1,0 +1,1061 @@
+CREATE DATABASE listofexercises DEFAULT CHARACTER SET utf8;
+
+CREATE TABLE Importance (
+importance_id INTEGER NOT NULL AUTO_INCREMENT,
+importance VARCHAR(255),
+PRIMARY KEY(importance_id)
+) ENGINE = InnoDB;
+
+
+INSERT INTO Importance (importance)
+VALUES ('Main');
+
+INSERT INTO Importance (importance)
+VALUES ('Secondary');
+
+
+CREATE TABLE BParts (
+bparts_id INTEGER NOT NULL AUTO_INCREMENT,
+parts VARCHAR(255),
+PRIMARY KEY(bparts_id)
+) ENGINE = InnoDB;
+
+
+INSERT INTO BParts (parts)
+VALUES ('ARM');
+
+INSERT INTO BParts (parts)
+VALUES ('BACK');
+
+INSERT INTO BParts (parts)
+VALUES ('LEGS');
+
+INSERT INTO BParts (parts)
+VALUES ('CORE');
+
+
+
+CREATE TABLE Repetition (
+Repetition_id INTEGER NOT NULL AUTO_INCREMENT,
+RepTime VARCHAR(255),
+PRIMARY KEY(Repetition_id)
+) ENGINE = InnoDB;
+
+
+
+INSERT INTO Repetition (RepTime)
+VALUES ('8-15 reps');
+
+INSERT INTO Repetition (RepTime)
+VALUES ('15-25 reps');
+
+INSERT INTO Repetition (RepTime)
+VALUES ('30-50 reps');
+
+INSERT INTO Repetition (RepTime)
+VALUES ('8-10 reps');
+
+INSERT INTO Repetition (RepTime)
+VALUES ('5-15 reps');
+
+INSERT INTO Repetition (RepTime)
+VALUES ('10-20 reps');
+
+INSERT INTO Repetition (RepTime)
+VALUES ('8-20 reps');
+
+INSERT INTO Repetition (RepTime)
+VALUES ('15-30 reps');
+
+
+
+CREATE TABLE Round (
+Round_id INTEGER NOT NULL AUTO_INCREMENT,
+name VARCHAR(255),
+PRIMARY KEY(Round_id)
+) ENGINE = InnoDB;
+
+
+
+ INSERT INTO Round (name)
+VALUES ('1 round');
+
+INSERT INTO Round (name)
+VALUES ('2 round');
+
+INSERT INTO Round (name)
+VALUES ('3 round');
+
+
+CREATE TABLE Duration (
+Duration_id INTEGER NOT NULL AUTO_INCREMENT,
+Times VARCHAR(255),
+PRIMARY KEY(Duration_id)
+) ENGINE = InnoDB;
+
+
+
+INSERT INTO Duration (Times)
+VALUES ('20 min per mile');
+
+INSERT INTO Duration (Times)
+VALUES ('16-20 min per mile');
+
+INSERT INTO Duration (Times)
+VALUES ('12-15 min per mile');
+
+INSERT INTO Duration (Times)
+VALUES ('8-11 min per mile');
+
+INSERT INTO Duration (Times)
+VALUES ('30 - 70 sec');
+
+INSERT INTO Duration (Times)
+VALUES ('3 - 5 min');
+
+INSERT INTO Duration (Times)
+VALUES ('5 - 10 min');
+
+INSERT INTO Duration (Times)
+VALUES ('10 - 15 min');
+
+
+
+
+
+CREATE TABLE PMuscleGroup1 (
+PMuscleGroup1_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup1_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+CREATE TABLE PMuscleGroup2 (
+PMuscleGroup2_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup2_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+
+CREATE TABLE PMuscleGroup3 (
+PMuscleGroup3_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup3_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+
+CREATE TABLE PMuscleGroup4 (
+PMuscleGroup4_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup4_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+
+CREATE TABLE PMuscleGroup5 (
+PMuscleGroup5_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup5_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+CREATE TABLE PMuscleGroup6 (
+PMuscleGroup6_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup6_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup6 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+
+CREATE TABLE PMuscleGroup7 (
+PMuscleGroup7_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup7_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup7 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+
+CREATE TABLE PMuscleGroup8 (
+PMuscleGroup8_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(PMuscleGroup8_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO PMuscleGroup8 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+
+CREATE TABLE SMuscleGroup1 (
+SMuscleGroup1_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(SMuscleGroup1_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO SMuscleGroup1 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+
+CREATE TABLE SMuscleGroup2 (
+SMuscleGroup2_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(SMuscleGroup2_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO SMuscleGroup2 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+CREATE TABLE SMuscleGroup3 (
+SMuscleGroup3_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(SMuscleGroup3_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO SMuscleGroup3 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+CREATE TABLE SMuscleGroup4 (
+SMuscleGroup4_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(SMuscleGroup4_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO SMuscleGroup4 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+CREATE TABLE SMuscleGroup5 (
+SMuscleGroup5_id INTEGER NOT NULL AUTO_INCREMENT,
+Musclelocation VARCHAR(255),
+bparts_id INTEGER,
+
+PRIMARY KEY(SMuscleGroup5_id),
+INDEX USING BTREE (Musclelocation),
+
+CONSTRAINT FOREIGN KEY (bparts_id) REFERENCES BParts (bparts_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('bicep', 1);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('shoulders', 1);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('tricep', 1);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('trapezius', 2);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('lats', 2);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('abs', 4);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('oblique', 4);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('pectoral', 4);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('adductor', 3);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('calves', 3);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('hamstrings', 3);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('glutes', 3);
+
+INSERT INTO SMuscleGroup5 (Musclelocation, bparts_id)
+VALUES ('quads', 3);
+
+
+CREATE TABLE Exercises (
+Exercise_id INTEGER NOT NULL AUTO_INCREMENT,
+Exercise VARCHAR(255),
+PMuscleGroup1_id INTEGER,
+PMuscleGroup2_id INTEGER,
+PMuscleGroup3_id INTEGER,
+PMuscleGroup4_id INTEGER,
+PMuscleGroup5_id INTEGER,
+PMuscleGroup6_id INTEGER,
+PMuscleGroup7_id INTEGER,
+PMuscleGroup8_id INTEGER,
+SMuscleGroup1_id INTEGER,
+SMuscleGroup2_id INTEGER,
+SMuscleGroup3_id INTEGER,
+SMuscleGroup4_id INTEGER,
+SMuscleGroup5_id INTEGER,
+round_id INTEGER,
+Repetition_id INTEGER,
+Duration_id INTEGER,
+
+PRIMARY KEY(Exercise_id),
+INDEX USING BTREE (Exercise),
+
+CONSTRAINT FOREIGN KEY (PMuscleGroup1_id) REFERENCES PMuscleGroup1 (PMuscleGroup1_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (PMuscleGroup2_id) REFERENCES PMuscleGroup2 (PMuscleGroup2_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (PMuscleGroup3_id) REFERENCES PMuscleGroup3 (PMuscleGroup3_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (PMuscleGroup4_id) REFERENCES PMuscleGroup4 (PMuscleGroup4_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (PMuscleGroup5_id) REFERENCES PMuscleGroup5 (PMuscleGroup5_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (PMuscleGroup6_id) REFERENCES PMuscleGroup6 (PMuscleGroup6_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (PMuscleGroup7_id) REFERENCES PMuscleGroup7 (PMuscleGroup7_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (PMuscleGroup8_id) REFERENCES PMuscleGroup8 (PMuscleGroup8_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (SMuscleGroup1_id) REFERENCES SMuscleGroup1 (SMuscleGroup1_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (SMuscleGroup2_id) REFERENCES SMuscleGroup2 (SMuscleGroup2_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (SMuscleGroup3_id) REFERENCES SMuscleGroup3 (SMuscleGroup3_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (SMuscleGroup4_id) REFERENCES SMuscleGroup4 (SMuscleGroup4_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (SMuscleGroup5_id) REFERENCES SMuscleGroup5 (SMuscleGroup5_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (round_id) REFERENCES Round (round_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (Repetition_id) REFERENCES Repetition (Repetition_id)
+ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT FOREIGN KEY (Duration_id) REFERENCES Duration (Duration_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Light running', 12, 13, 10, 7, 2, 9, 6, NULL, 2, 7,
+          NULL, NULL, NULL, 1, NULL, 1);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Moderate running', 12, 13, 10, 7, 2, 9, 6, NULL, 2, 7,
+                    NULL, NULL, NULL, 1, NULL, 2);
+
+                    INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+                      PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+                      PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+                      SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+                      VALUES ('Running', 12, 13, 10, 7, 2, 9, 6, NULL, 2, 7,
+                              NULL, NULL, NULL, 1, NULL, 3);
+
+                              INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+                                PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+                                PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+                                SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+                                VALUES ('Intense running', 12, 13, 10, 7, 2, 9, 6, NULL, 2, 7,
+                                        NULL, NULL, NULL, 1, NULL, 4);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Skater', 12, 13, NULL, NULL, NULL, NULL, NULL, NULL, 6, 7,
+          2, NULL, NULL, 3, NULL, 6);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Burpees', 13, 10, 3, 2, 7, NULL, NULL, NULL, NULL, NULL,
+          NULL, NULL, NULL, 3, NULL, 6);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Mountain climber', 6, 3, 2, 7, 9, 13, NULL, NULL, NULL, NULL,
+          NULL, NULL, NULL, 3, NULL, 6);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Bicep curls', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL,
+          NULL, NULL, NULL, 3, 1, 7);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Shoulder raises', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL,
+          NULL, NULL, NULL, 3, 1, 7);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Shoulder front raises', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL,
+          NULL, NULL, NULL, 3, 1, 7);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Lunges', 13, 12, NULL, NULL, NULL, NULL, NULL, NULL, 10, 11,
+          6, NULL, NULL, 3, 2, 8);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('One leg toe raises', 10, 12, NULL, NULL, NULL, NULL, NULL, NULL, 13, 11,
+          9, NULL, NULL, 3, 3, 8);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Bicep curls w/ bands', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL,
+                    NULL, NULL, NULL, 3, 1, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Shoulder raises w/ bands', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL,
+                    NULL, NULL, NULL, 3, 1, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Shoulder front raises w/ bands', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL,
+                    NULL, NULL, NULL, 3, 1, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Lunges w/ bands', 13, 12, NULL, NULL, NULL, NULL, NULL, NULL, 10, 11,
+                    6, NULL, NULL, 3, 2, 8);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('One leg toe presses w/ bands', 10, 12, NULL, NULL, NULL, NULL, NULL, NULL, 13, 11,
+                    9, NULL, NULL, 3, 3, 8);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Reverse flies', 2, 4, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL,
+          NULL, NULL, NULL, 3, 1, 7);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Push ups', 3, 8, 12, 13, NULL, NULL, NULL, NULL, 2, 5,
+          6, 4, NULL, 3, 2, 7);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('Wide push ups', 3, 8, 5, 12, 11, NULL, NULL, NULL, 2, 6,
+          NULL, NULL, NULL, 3, 2, 7);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('diamond push ups', 3, 8, 12, 9, NULL, NULL, NULL, NULL, 2, 5,
+          6, NULL, NULL, 3, 2, 7);
+
+INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+  PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+  PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+  SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+  VALUES ('wide and close grip pull ups', 5, 4, 6, NULL, NULL, NULL, NULL, NULL, 2, 1,
+          9, NULL, NULL, 3, 4, 8);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Chin up', 5, 4, 1, NULL, NULL, NULL, NULL, NULL, 2, NULL,
+                    NULL, NULL, NULL, 3, 4, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Tricep dips', 3, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                    NULL, NULL, NULL, 3, 2, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Sit ups', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 9,
+                    NULL, NULL, NULL, 2, 3, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Russian twist', 6, 7, NULL, NULL, NULL, NULL, NULL, NULL, 2, 9,
+                    13, NULL, NULL, 2, 3, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Leg raises', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 13,
+                    9, NULL, NULL, 2, 8, 7);
+
+          INSERT INTO Exercises ( Exercise, PMuscleGroup1_id, PMuscleGroup2_id,
+            PMuscleGroup3_id, PMuscleGroup4_id, PMuscleGroup5_id, PMuscleGroup6_id, PMuscleGroup7_id,
+            PMuscleGroup8_id, SMuscleGroup1_id, SMuscleGroup2_id, SMuscleGroup3_id, SMuscleGroup4_id,
+            SMuscleGroup5_id, round_id, Repetition_id, Duration_id)
+            VALUES ('Bicycle crunches', 6, 7, NULL, NULL, NULL, NULL, NULL, NULL, 13, 12,
+                    9, NULL, NULL, 2, 3, 7);
