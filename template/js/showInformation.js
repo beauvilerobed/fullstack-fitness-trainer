@@ -8,8 +8,7 @@ $(document).ready(function() {
             $("#exercisePreferenceQuestions").slideUp();
             $("#weeklyWorkoutQuestions").slideUp();
             closeAllQuestions = false;
-            // https://www.w3schools.com/jquery/html_remove.asp
-            // https://api.jquery.com/append/
+
             $("#changeQuestion").empty("Start Here");
             $("#changeQuestion").append("<h2>Start Here</h2>");
         } else {
@@ -70,7 +69,6 @@ $(document).ready(function() {
 
         $("#ShowFoodTable").click(function() {
             var foodAndNutritionArray = $(".foodlist").removeClass("selected");
-            // validate input
             if (
                 1 <= $("#getChosenValuebyUser").val() &&
                 $("#getChosenValuebyUser").val() <= 7
@@ -105,8 +103,6 @@ $(document).ready(function() {
         });
     });
 
-    // https://codepen.io/jvondoom/pen/VvbrdY
-    // show and hide tabes of exercises
     $("#showCardio").click(function() {
         $("#tableforCardioWorkouts").fadeToggle(500);
     });
@@ -124,7 +120,6 @@ $(document).ready(function() {
         $(".container_tutorial").fadeToggle(500);
     });
 
-    //check and uncheck for muscle group guide
     $("#absguide").prop("checked", true);
     $("#absguide").prop("checked", false);
 
@@ -161,7 +156,6 @@ $(document).ready(function() {
     $("#quadsguide").prop("checked", true);
     $("#quadsguide").prop("checked", false);
 
-    // collapse the navbar when clicked outside
     $(document).click(function collapseNavbar(event) {
         var clickover = $(event.target);
         console.log(clickover);
@@ -171,7 +165,6 @@ $(document).ready(function() {
         }
     });
 
-    // show or hide workout videos
     $("h2.hideAndShow_ResistancebandVideo").click(function() {
         $("#showResistancebandVideo").fadeToggle(500);
     });

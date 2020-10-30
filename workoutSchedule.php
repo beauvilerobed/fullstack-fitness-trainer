@@ -16,11 +16,11 @@ $_SESSION['success3'] = "Your workout plan is below. Take a snapshot and enjoy!"
 <meta name="viewport" content="height=device-height, initial-scale=.5">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
-require_once "linksAndScripts.php";
+require_once "/template/linksAndScripts.php";
 ?>
 </head>
 <body>
-  <!-- Navigation Bar -->
+
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <a href="index.php">
@@ -39,11 +39,10 @@ require_once "linksAndScripts.php";
       </ul>
     </div>
   </nav>
-  <!-- End of Navigation Bar -->
+
 <div class="container">
 </br>
-<!-- assert faluire if input is incorrect or does not satisfy requirements -->
-  <?php
+<?php
 if(!$_POST) {
     echo '<p class="show_failure" style="color:red;font-size:20px">' . $_SESSION['failure3'] . "</p>\n";
     unset($_SESSION['failure2']);
@@ -71,7 +70,6 @@ if(!$_POST) {
    <strong>DISCLAIMER:</strong> Every body is unique and the protein-fat-carb distribution can be altered, it is only a guide.
 </p>
 
-<!-- <pre class="pre_view check post response">
 <?php
 foreach($_POST as $workoutlistDBrow) {
     print_r($workoutlistDBrow);

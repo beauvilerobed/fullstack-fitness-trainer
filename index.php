@@ -2,9 +2,6 @@
 session_start();
 require_once "Database.php";
 
-//uncomment for testing
-// $_SESSION = array();
-
 function makeSaveButton($exersiseIndex)
 {
     $exerciseInfo_array = $GLOBALS['workoutlist_array'];
@@ -396,11 +393,11 @@ if (isset($_POST['PoundsOrKilograms']) && isset($_POST['MeterOrFeet']) && isset(
 <meta name="viewport" content="height=device-height, initial-scale=.5">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
-require_once "linksAndScripts.php";
+require_once "/template/linksAndScripts.php";
 ?>
 </head>
 <body>
-<!-- Navigation Bar -->
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="navbar-header">
     <a href="index.php">
@@ -420,15 +417,14 @@ require_once "linksAndScripts.php";
     </ul>
   </div>
 </nav>
-<!-- End of Navigation Bar -->
+
 <div class="container">
 
-  <!-- start tutorial video -->
+
   <div class="container_tutorial">
   <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script src="https://npmcdn.com/react-player@1.15.2/dist/ReactPlayer.js"></script>
-<!--   <script type="module" src="https://npmcdn.com/react-player@1.15.2/dist/ReactPlayer.js.map"></script> -->
   <script type="module" src="./template/js/Demo/appTutorial.js"></script>
   <div id="Tutorial_video"></div>
 </div>
@@ -439,7 +435,6 @@ require_once "linksAndScripts.php";
 <button id="changeQuestion" class="btn btn-primary btn-lg btn-block"><h2>Start Here</h2></button>
 </div>
 
-<!-- assert faluire if input is incorrect or does not satisfy requirements -->
 <?php
 if (isset($_SESSION['failure1'])) {
     echo '<p class="show_failure" style="color:red">' . $_SESSION['failure1'] . "</p>\n";
@@ -455,7 +450,6 @@ if (isset($_SESSION['success'])) {
 }
 ?>
 
-<!-- begin input form -->
 <form method="POST" action="index.php">
 
 <div id="BMIQuestions" style="display:none">
@@ -584,7 +578,6 @@ while ($i < $numberOfFoods) {
 <input type="text" class="ip4" id="getChosenValuebyUser" size="3" value="5" />
 </pre>
 
-  <!-- https://codepen.io/baublet/pen/PzjmpL -->
 <main id="guide">
 
 <div class="muscle-groups">
@@ -714,7 +707,6 @@ The % Daily Value (%DV) is the percentage of the Daily Value for each nutrient i
 <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://npmcdn.com/react-player@1.15.2/dist/ReactPlayer.js"></script>
-<!--   <script type="module" src="https://npmcdn.com/react-player@1.15.2/dist/ReactPlayer.js.map"></script> -->
 
 <script type="module" src="./template/js/Cardio/RenderVideoPlayer.js"></script>
 <script type="module" src="./template/js/BodyWeight/RenderVideoPlayer.js"></script>
@@ -731,7 +723,7 @@ The % Daily Value (%DV) is the percentage of the Daily Value for each nutrient i
 <h2 class="edit_h2 hideAndShow_BodyWeightVideo">Bodyweight</h2>
 <div id="showBodyWeightVideo"></div>
 </body>
-<!-- Site footer -->
+
    <footer class="site-footer">
      <div class="container3">
        <div class="row">

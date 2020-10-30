@@ -1,4 +1,4 @@
-// Data export
+
 export default [{
     bodyWeightworkouts: [{
             seconds: 6,

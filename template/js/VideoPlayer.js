@@ -20,7 +20,6 @@ class VideoPlayer extends React.Component {
     }
 
     pauseVideo() {
-        // Pause as well
         this.refs.vidRef.getInternalPlayer().pauseVideo()
         this.setState({
             'isVideoPlaying': false
